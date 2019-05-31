@@ -1,0 +1,19 @@
+name: knowledge_distillation
+
+channels:
+  - defaults
+
+dependencies:
+  - pip
+  
+  - pip:
+    - keras==2.2.4
+    - tensorflow # ==1.12.0
+    - matplotlib #==3.0.3
+    - hickle #==3.4.3
+    - pillow #==5.1.0
+    # - tensorflow-gpu==1.12.0 # only need to install if you have a GPU
+    - six #==1.11.0
+    - numpy #==1.14.5'
+    - azureml-sdk
+    - tqdm

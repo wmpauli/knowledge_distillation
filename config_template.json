@@ -1,0 +1,14 @@
+{
+    "subscription_id": "<enter your subscription id here>",
+    "resource_group": "mladsrg",
+    "workspace_name": "mladsws",
+    "workspace_region": "westus2",
+    "service_principal_id": "",
+    "service_principal_password": "",
+    "tenant_id": "",
+    "cpu_compute": "cpu-compute",
+    "gpu_compute": "gpu-compute",
+    "acr_address": "",
+    "acr_username": "",
+    "acr_password": ""
+}
