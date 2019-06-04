@@ -116,7 +116,7 @@ except BaseException as e:
 
 # conda dependencies for compute targets
 gpu_cd = CondaDependencies.create(
-    conda_packages=['cudatoolkit'],
+    # conda_packages=['cudatoolkit'],
     pip_packages=['keras', 'tensorflow', 'tensorflow-gpu', 'matplotlib', 'pillow', 'six', 'numpy', 'azureml-sdk', 'tqdm'])
 
 # Runconfigs
@@ -176,7 +176,7 @@ est = Estimator(source_directory=script_folder,
                 #  script_params=script_params,
                  compute_target=gpu_compute_target,
                  pip_packages=['keras', 'tensorflow', 'tensorflow-gpu', 'matplotlib', 'pillow', 'six', 'numpy', 'azureml-sdk', 'tqdm'],
-                 conda_packages=['cudatoolkit'],
+                #  conda_packages=['cudatoolkit'],
                  entry_script='kd_squeezenet.py', 
                  use_gpu=True,
                  node_count=1)
