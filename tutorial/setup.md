@@ -45,9 +45,10 @@ Then you can execute the script, which will do two things:
 
 ## Service Principal Authentication
 
-For instructions on how to setup your Service Principal Authentication, go [here](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/manage-azureml-service/authentication-in-azureml/authentication-in-azure-ml.ipynb) and scroll down to the section on "Service Principal Authentication".
-
-After you are done with this step.  Edit the `config.json` file again, to add `tenant_id`, `service_principal_id`, `service_principal_password`.
+Here's how to setup your Service Principal Authentication: 
+- Go to the [Azure portal](https://portal.azure.com/), search for and select **Azure Active Directory** and click on **App registrations** in the left pannel, then **+ New registration**. Enter a display name and click on **Register**. 
+- You can now copy the **Application (client) ID** and **Directory (tenant) ID** and paste it into the filds called `service_principal_id` and `tenant_id` in `config.json` respectively. Now click on **Certificates and secrets** in the left pannel and **+ New client secret** and **Add**, then copy your client secret (under **VALUE**) and paste it in the field called `service_principal_password` in `config.json`.
+- From the [Azure portal](https://portal.azure.com/) now search and click on your resource group name `mladsrg` and click on **Access control (IAM)** in the left pannel, then **+ Add**, and **Add role assignment**. Select **Contributor** as **Role**, and type the display name of your service principal in the search box titled **Select**.
 
 ## DevOps Project
 
