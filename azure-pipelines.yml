@@ -44,6 +44,7 @@ steps:
 
 - task: AzureCLI@1
   displayName: 'Run Published Pipelines'
+  timeoutInMinutes: 120
   inputs:
     azureSubscription: 'serviceConnection'
     scriptLocation: inlineScript
