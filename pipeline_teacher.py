@@ -119,7 +119,7 @@ print("DataReference object created")
 
 # Conda dependencies for compute targets
 gpu_cd = CondaDependencies.create(
-    conda_packages=['cudatoolkit'], 
+    conda_packages=['cudatoolkit=10.0.130'], 
     pip_packages=['keras', 'tensorflow', 'tensorflow-gpu', 'matplotlib', 'pillow', 'six', 'numpy', 'azureml-sdk', 'tqdm'])
 
 # Runconfig
