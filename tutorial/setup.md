@@ -52,7 +52,11 @@ After you are done with this step.  Edit the `config.json` file again, to add `t
 
 ## Upload Data to Azure cloud
 
+We of course need some [data](https://en.wikipedia.org/wiki/Data) to play with. 
 
+We uploaded the tutorial data to a public azure blob storage account. 
+
+Please run the script `upload_data.py`, which downloads the data from the public azure storage account, and uploads it to the default data store of your AML workspace. If you are successful with this, you should be able to see the data appear in your AML workspace in the Azure portal: `Overview` -> `Storage` -> `Blobs` -> `azureml_blobstore_<sha>` -> `knowledge_distillation`.
 
 ## DevOps Project
 

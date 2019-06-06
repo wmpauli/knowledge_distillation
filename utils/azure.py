@@ -110,11 +110,11 @@ def delete_data_from_blob(prefix):
     print("Deleting blobs from folder:", prefix)
     blob_service = BlockBlobService(def_blob_store.account_name, def_blob_store.account_key)
     
-    generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
-    for blob in generator:
-        if blob.name.endswith("mp4"):
-            print("Deleting: " + blob.name)
-            blob_service.delete_blob(def_blob_store.container_name, blob.name)
+    # generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
+    # for blob in generator:
+    #     if blob.name.endswith("mp4"):
+    #         print("Deleting: " + blob.name)
+    #         blob_service.delete_blob(def_blob_store.container_name, blob.name)
 
     generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
     for blob in generator:
