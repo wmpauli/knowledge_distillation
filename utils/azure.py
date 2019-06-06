@@ -82,12 +82,18 @@ def upload_data(folder="val_no_resizing"):
     ds = ws.get_default_datastore()
 
     ds.upload(src_dir=os.path.join("256_ObjectCategories_preproc", folder), target_path=os.path.join("knowledge_distillation", "data", folder))
-    # ds.upload_files(os.path.join(os.getcwd(), 'data/video', folder + '.txt'), target_path=os.path.join('prednet/data/video'))
 
-    # with open('filestamp.txt', 'w') as f:
-    #     f.write(folder + '\n')
 
-    # ds.upload_files([os.path.join(os.getcwd(), 'filestamp.txt')], overwrite=True)
+def download_data(url='https://coursematerial.blob.core.windows.net/data/256_ObjectCategories_preproc.zip'):
+    from io import BytesIO
+    from zipfile import ZipFile
+    from urllib.request import urlopen
+    
+    resp = urlopen(url)
+    zip_ref = ZipFile(BytesIO(resp.read()))
+
+    zip_ref.extractall()
+    zip_ref.close()
 
 
 def delete_data_from_blob(prefix):
@@ -104,11 +110,11 @@ def delete_data_from_blob(prefix):
     print("Deleting blobs from folder:", prefix)
     blob_service = BlockBlobService(def_blob_store.account_name, def_blob_store.account_key)
     
-    generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
-    for blob in generator:
-        if blob.name.endswith("mp4"):
-            print("Deleting: " + blob.name)
-            blob_service.delete_blob(def_blob_store.container_name, blob.name)
+    # generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
+    # for blob in generator:
+    #     if blob.name.endswith("mp4"):
+    #         print("Deleting: " + blob.name)
+    #         blob_service.delete_blob(def_blob_store.container_name, blob.name)
 
     generator = blob_service.list_blobs(def_blob_store.container_name, prefix=prefix)
     for blob in generator:

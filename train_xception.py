@@ -85,7 +85,7 @@ data_generator_val = ImageDataGenerator(
 )
 
 train_generator = data_generator.flow_from_directory(
-    os.path.join(data_dir, 'train_no_resizing'), 
+    os.path.join(data_dir, 'teacher_no_resizing'), 
     target_size=(299, 299),
     batch_size=64
 )

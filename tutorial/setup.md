@@ -7,6 +7,7 @@ The main tasks are the configuration of:
 1. Conda Environment
 1. AML Workspace and configure remote compute target
 1. Service Principal Authentication
+1. Upload Data to Azure cloud
 1. DevOps Project
 
 ## Code Repository
@@ -19,7 +20,7 @@ The main tasks are the configuration of:
 
 The first step is to ensure that you have all python libraries installed.  Use the provided file `environment.yml` for this purpose:
 
-> conda env create -f environmetn.yml
+> conda env create -f environment.yml
 
 See the [Conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for more details.
 
@@ -49,6 +50,18 @@ Here's how to setup your Service Principal Authentication:
 - Go to the [Azure portal](https://portal.azure.com/), search for and select **Azure Active Directory** and click on **App registrations** in the left pannel, then **+ New registration**. Enter a display name and click on **Register**. 
 - You can now copy the **Application (client) ID** and **Directory (tenant) ID** and paste it into the filds called `service_principal_id` and `tenant_id` in `config.json` respectively. Now click on **Certificates and secrets** in the left pannel and **+ New client secret** and **Add**, then copy your client secret (under **VALUE**) and paste it in the field called `service_principal_password` in `config.json`.
 - From the [Azure portal](https://portal.azure.com/) now search and click on your resource group name `mladsrg` and click on **Access control (IAM)** in the left pannel, then **+ Add**, and **Add role assignment**. Select **Contributor** as **Role**, and type the display name of your service principal in the search box titled **Select**.
+
+**IMPORTANT:** The above instructions require you to use `App registrations (Legacy)`. the *Legacy* version!
+
+After you are done with this step.  Edit the `config.json` file again, to add `tenant_id`, `service_principal_id`, `service_principal_password`.
+
+## Upload Data to Azure cloud
+
+We of course need some [data](https://en.wikipedia.org/wiki/Data) to play with. 
+
+We uploaded the tutorial data to a public azure blob storage account. 
+
+Please run the script `upload_data.py`, which downloads the data from the public azure storage account, and uploads it to the default data store of your AML workspace. If you are successful with this, you should be able to see the data appear in your AML workspace in the Azure portal: `Overview` -> `Storage` -> `Blobs` -> `azureml_blobstore_<sha>` -> `knowledge_distillation`.
 
 ## DevOps Project
 

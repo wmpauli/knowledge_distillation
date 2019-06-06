@@ -15,5 +15,6 @@ dependencies:
     # - tensorflow-gpu==1.12.0 # only need to install if you have a GPU
     - six #==1.11.0
     - numpy #==1.14.5'
-    - azureml-sdk
     - tqdm
+    - azure-storage
+    - azureml-sdk
