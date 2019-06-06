@@ -1,4 +1,4 @@
-# Distilling DNNs for low-cost, high-performance deployments on the IoT edge
+# Tutorial: Distilling DNNs for low-cost, high-performance deployments on the IoT edge
 #
 Wolfgang M. Pauli, PhD
 Seth Mottadinghejad
@@ -29,7 +29,7 @@ Imagine the following scenario:
 
 - We use a large neural network architecture (teacher) to teach the small network (student).
 - The teacher network has been trained by somebody else on a similar dataset.
-- We don't know (and we don't care!) how this teacher has been trained.
+- We don't know how this teacher has been trained.
 
 ---
 
@@ -59,7 +59,7 @@ Imagine the following scenario:
 
 This approach is called **Knowledge Distillation**.
 
-Early work: Buciluǎ, Cristian, Rich Caruana, and Alexandru Niculescu-Mizil. "Model compression." Proceedings of the 12th ACM SIGKDD international conference on Knowledge discovery and data mining. ACM, 2006.
+Early work: BuciluÇŽ, Cristian, Rich Caruana, and Alexandru Niculescu-Mizil. "Model compression." Proceedings of the 12th ACM SIGKDD international conference on Knowledge discovery and data mining. ACM, 2006.
 
 Later work: Hinton, Geoffrey, Oriol Vinyals, and Jeff Dean. "Distilling the knowledge in a neural network." arXiv preprint arXiv:1503.02531 (2015).
 
@@ -86,89 +86,13 @@ Cross modal distillation addresses the problem of limited labels in a certain mo
 
 ---
 
-# Tutorial
+# Tutorial Instructions
 
-How to get the most out of Azure Machine Learning (AML) services to perform knowledge distillation from a teacher to a student model, to then deploy the student model for low-cost inferencing.
+Please go to the repo and follow the instructions there.
 
-TODO: datastore trigger
-
----
-
-# Tutorial - Tools
-
-- Azure Machine Learning (AML)
-	- Workspace - Model Management and ML Experimentation
-	- Compute - Model Training with GPU
-	- Pipelines - Data Prep, Feature Eng, Training, Testing
-- HyperDrive - Hyperparameter tuning
-- Azure Kubernetes Service - Deployment
-- MLOps ML extension for Azure DevOps
-
----
-
-# Tutorial - Outline
-
-1. Create AML Workspace
-1. Provision AML Compute target with GPU
-1. Modify training script for compatibility with HyperDrive
-1. Define AML Pipeline
-	1. Modify Data Prep / Feature Eng and training scripts
-	1. Define DataStore trigger to monitor for new unlabeled training data
-
----
-
-# Create AML Service Workspace
-
-- Top-level resource for Azure Machine Learning service for managing all the artifacts you create when you use Azure Machine Learning service.
-- Keeps a history of:
-	- training runs
-	- logs
-	- metrics
-	- output (e.g. processed data, trained model)
-	- snapshot of scripts
-
----
-
-# Provision AML Compute target with GPU
-
-- A compute target is the compute resource that you use to run your training script or host your service deployment.
-- Azure Machine Learning Compute is a managed-compute infrastructure that allows the user to easily create a single or multi-node compute.
-- The compute is created within your workspace region as a resource that can be shared with other users in your workspace. 
 
 
 ---
-
-# Modify training script for HyperDrive
-
-- An important aspect of machine learning is hyperparameter tuning. 
-- AML's HyperDrive is a hyperparameter tuning service, offering:
-	- Random, Grid and Bayesian parameter sampling
-    - manages the jobs creation and monitoring process for the user
-    - early termination
-
----
-
-# Define AML Pipeline
-
-# ![Schema of AML Pipelines](images/pipelines.png)
-
-### Advantages of AML Pipelines:
-- Unattended runs
-- Mixed and diverse compute 	
-- Reusability
-- Tracking and versioning
-
----
-
-# Setup Define DevOps environment
-
-# ![Schema of Deployment Pipeline](images/deployment-pipeline.png)
-
----
-
-# Thank You
-
-Now that we have setup everything, we can run our training and deployement pipelines.
 
 ### Homework:
 - Check whether your webservice was deployed successfully
