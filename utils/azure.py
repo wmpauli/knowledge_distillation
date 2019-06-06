@@ -90,6 +90,20 @@ def upload_data(folder="val_no_resizing"):
     # ds.upload_files([os.path.join(os.getcwd(), 'filestamp.txt')], overwrite=True)
 
 
+def download_data(url='https://coursematerial.blob.core.windows.net/data/256_ObjectCategories_preproc.zip'):
+    # import zipfile
+    from io import BytesIO
+    from zipfile import ZipFile
+    from urllib.request import urlopen
+    
+    resp = urlopen(url)
+    zip_ref = ZipFile(BytesIO(resp.read()))
+
+    # zip_ref = ZipFile(url, 'r')
+    zip_ref.extractall() #'./  ')
+    zip_ref.close()
+
+
 def delete_data_from_blob(prefix):
     from azure.storage.blob import BlockBlobService
     from azureml.core.authentication import ServicePrincipalAuthentication

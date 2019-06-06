@@ -7,6 +7,7 @@ The main tasks are the configuration of:
 1. Conda Environment
 1. AML Workspace and configure remote compute target
 1. Service Principal Authentication
+1. Upload Data to Azure cloud
 1. DevOps Project
 
 ## Code Repository
@@ -48,6 +49,10 @@ Then you can execute the script, which will do two things:
 For instructions on how to setup your Service Principal Authentication, go [here](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/manage-azureml-service/authentication-in-azureml/authentication-in-azure-ml.ipynb) and scroll down to the section on "Service Principal Authentication".
 
 After you are done with this step.  Edit the `config.json` file again, to add `tenant_id`, `service_principal_id`, `service_principal_password`.
+
+## Upload Data to Azure cloud
+
+
 
 ## DevOps Project
 
