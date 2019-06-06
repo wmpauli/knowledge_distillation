@@ -20,7 +20,7 @@ The main tasks are the configuration of:
 
 The first step is to ensure that you have all python libraries installed.  Use the provided file `environment.yml` for this purpose:
 
-> conda env create -f environmetn.yml
+> conda env create -f environment.yml
 
 See the [Conda documentation](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) for more details.
 
@@ -47,6 +47,8 @@ Then you can execute the script, which will do two things:
 ## Service Principal Authentication
 
 For instructions on how to setup your Service Principal Authentication, go [here](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/manage-azureml-service/authentication-in-azureml/authentication-in-azure-ml.ipynb) and scroll down to the section on "Service Principal Authentication".
+
+**IMPORTANT:** The above instructions require you to use `App registrations (Legacy)`. the *Legacy* version!
 
 After you are done with this step.  Edit the `config.json` file again, to add `tenant_id`, `service_principal_id`, `service_principal_password`.
 
