@@ -82,16 +82,9 @@ def upload_data(folder="val_no_resizing"):
     ds = ws.get_default_datastore()
 
     ds.upload(src_dir=os.path.join("256_ObjectCategories_preproc", folder), target_path=os.path.join("knowledge_distillation", "data", folder))
-    # ds.upload_files(os.path.join(os.getcwd(), 'data/video', folder + '.txt'), target_path=os.path.join('prednet/data/video'))
-
-    # with open('filestamp.txt', 'w') as f:
-    #     f.write(folder + '\n')
-
-    # ds.upload_files([os.path.join(os.getcwd(), 'filestamp.txt')], overwrite=True)
 
 
 def download_data(url='https://coursematerial.blob.core.windows.net/data/256_ObjectCategories_preproc.zip'):
-    # import zipfile
     from io import BytesIO
     from zipfile import ZipFile
     from urllib.request import urlopen
@@ -99,8 +92,7 @@ def download_data(url='https://coursematerial.blob.core.windows.net/data/256_Obj
     resp = urlopen(url)
     zip_ref = ZipFile(BytesIO(resp.read()))
 
-    # zip_ref = ZipFile(url, 'r')
-    zip_ref.extractall() #'./  ')
+    zip_ref.extractall()
     zip_ref.close()
 
 
