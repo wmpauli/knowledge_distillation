@@ -84,7 +84,7 @@ def upload_data(folder="val_no_resizing"):
     ds.upload(src_dir=os.path.join("256_ObjectCategories_preproc", folder), target_path=os.path.join("knowledge_distillation", "data", folder))
 
 
-def download_data(url='https://coursematerial.blob.core.windows.net/data/256_ObjectCategories_preproc.zip'):
+def download_data(url='https://coursematerial.blob.core.windows.net/data/256_ObjectCategories_preproc.zip?sp=r&st=2019-11-19T20:38:25Z&se=2020-11-20T04:38:25Z&spr=https&sv=2019-02-02&sr=b&sig=yPy8xWX5A4LBvYlH6H%2B0KmSODTzfQzQzuz2jkgBFX74%3D'):
     from io import BytesIO
     from zipfile import ZipFile
     from urllib.request import urlopen
